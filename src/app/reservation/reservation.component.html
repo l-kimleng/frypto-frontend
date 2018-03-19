@@ -1,0 +1,48 @@
+<main class="reservation-view">
+    <div class="gallery">
+        <figure class="gallery__item">
+            <img src="assets/img/hotel-1.jpg" alt="Photo of hotel 1" class="gallery__photo">
+        </figure>
+        <figure class="gallery__item">
+            <img src="assets/img/hotel-2.jpg" alt="Photo of hotel 2" class="gallery__photo">
+        </figure>
+        <figure class="gallery__item">
+            <img src="assets/img/hotel-3.jpg" alt="Photo of hotel 3" class="gallery__photo">
+        </figure>
+    </div>
+  
+    <div class="overview">
+        <h1 class="overview__heading">
+            Airline Reservation
+        </h1> 
+    </div>
+    <div class="reservation-detail">
+        <div class="form-area">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reservation Date</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Number in Party</th>
+                    <th scope="col">Ticket Type</th>
+                    <th scope="col">Travel Class</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let r of reservations; let i = index" >
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{r.ReservationDate}}</td>
+                    <td>{{r.Passenger.FirstName}}</td>
+                    <td>{{r.Passenger.LastName}}</td>
+                    <td>{{r.NumberInParty}}</td>
+                    <td>{{r.TicketType.Name}}</td>
+                    <td>{{r.TravelClass.Class}}</td>
+                  </tr>                  
+                </tbody>
+              </table>
+        </div>        
+    </div>   
+  
+  </main>
