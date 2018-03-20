@@ -66,13 +66,13 @@ body {
     box-shadow: var(--shadow-dark);
     padding-left: 0;
     padding-right: 0;
-    min-height: 50rem;
+    min-height: 100rem;
 
     @media only screen and (max-width: $bp-largest) {
         margin: 0;
         max-width: 100%;
         width: 100%;
-    }
+    }    
 }
 .header {
     font-size: 1.4rem;
@@ -100,10 +100,9 @@ body {
 }
 
 .sidebar {
-    background-color: var(--color-grey-dark-1);
-
+    background-color: var(--color-grey-dark-1);   
     flex: 0 0 18%;
-
+    min-height: 100rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -256,6 +255,10 @@ body {
     &__photo {
         width: 100%;
         display: block;
+    }
+
+    &__item {
+        margin: 0;
     }
 }
 

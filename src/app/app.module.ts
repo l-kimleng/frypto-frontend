@@ -31,24 +31,26 @@ import { ReservationService } from './reservation/reservation.service';
     RouterModule.forRoot([
       {
         path: "",
-        component: HomeComponent
-      },
-      {
-        path: "hotel",
-        component: HotelComponent
-      },
-      {
-        path: 'passenger',
-        component: PassengerComponent
-      },
-      {
-        path: 'reservation',
-        component: ReservationComponent
-      },
-      {
-        path: 'payments',
-        component: PaymentsComponent
-      }
+        component: HomeComponent,
+        children: [
+          {
+            path: "hotel",
+            component: HotelComponent
+          },
+          {
+            path: 'passenger',
+            component: PassengerComponent
+          },
+          {
+            path: 'reservation',
+            component: ReservationComponent
+          },
+          {
+            path: 'payments',
+            component: PaymentsComponent
+          }
+        ]
+      }      
     ])
   ],
   providers: [ 
