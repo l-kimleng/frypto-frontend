@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReservationService } from './reservation/reservation.service';
 import { AuthComponent } from './auth/auth.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthComponent } from './auth/auth.component';
     PassengerComponent,
     PaymentsComponent,
     ReservationComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
 ,
     AuthComponent
 ],
@@ -56,7 +58,13 @@ import { AuthComponent } from './auth/auth.component';
       },
       {
         path: "auth",
-        component: AuthComponent
+        component: AuthComponent,
+        children: [
+          {
+            path: "register",
+            component: RegisterComponent
+          }
+        ]
       }      
     ])
   ],
