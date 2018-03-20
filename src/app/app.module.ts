@@ -25,8 +25,7 @@ import { RegisterComponent } from './auth/register/register.component';
     PaymentsComponent,
     ReservationComponent,
     NavbarComponent,
-    RegisterComponent
-,
+    RegisterComponent,
     AuthComponent
 ],
   imports: [
