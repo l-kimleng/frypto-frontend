@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReservationService } from './reservation/reservation.service';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthService } from './auth/auth.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { RegisterComponent } from './auth/register/register.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,    
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -68,7 +71,8 @@ import { RegisterComponent } from './auth/register/register.component';
     ])
   ],
   providers: [ 
-    ReservationService
+    ReservationService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

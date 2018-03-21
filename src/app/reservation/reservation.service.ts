@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions } from '@angular/http';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
