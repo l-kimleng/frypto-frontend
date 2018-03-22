@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -15,18 +16,21 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.user = {
-      FirstName: '',
-      LastName: '',
-      Email: '',
-      Password: '',
-      ConfirmPassword: ''
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
     };
   }
 
   registerUser() {
-    this._authServce.registerUser(this.user).subscribe(res => {
-      console.log(res);
-      if(res.ok == false) this._router.navigate['hotel'];
+    this._authServce.registerUser(this.user).subscribe(error => {
+      if(!error) {
+        this._authServce.login(this.user).subscribe(response => {
+          console.log(response);
+        });
+      }
     });  
   }
 
