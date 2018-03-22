@@ -16,6 +16,7 @@ import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthService } from './auth/auth.service';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     ReservationComponent,
     NavbarComponent,
     RegisterComponent,
-    AuthComponent
+    AuthComponent,
+    LoginComponent
 ],
   imports: [
     BrowserModule,
@@ -65,6 +67,10 @@ import { FormsModule } from '@angular/forms';
           {
             path: "register",
             component: RegisterComponent
+          },
+          {
+            path: "login",
+            component: LoginComponent
           }
         ]
       }      
