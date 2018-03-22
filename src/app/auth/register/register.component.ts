@@ -27,8 +27,9 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     this._authServce.registerUser(this.user).subscribe(error => {
       if(!error) {
-        this._authServce.login(this.user).subscribe(response => {
-          console.log(response);
+        this._authServce.login(this.user).subscribe(response => {          
+          localStorage.setItem('token', response[0]);
+          this._router.navigate(['/hotel']);
         });
       }
     });  
