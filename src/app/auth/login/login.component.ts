@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     this._authService.login(this.user).subscribe(response => {
       localStorage.setItem('token', response[0]);
       this._router.navigate(['/hotel']);
+    }, error => {
+      alert('login fail');
     });
   }
 
