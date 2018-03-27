@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import * as firebase from 'firebase';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +19,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthService } from './auth/auth.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
+import { environment } from '../environments/environment';
+import { MessageService } from './auth/message.service';
 
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
@@ -35,7 +40,8 @@ import { LoginComponent } from './auth/login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,    
+    FormsModule, 
+    AngularFireModule.initializeApp(environment.firebase),    
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -78,7 +84,8 @@ import { LoginComponent } from './auth/login/login.component';
   ],
   providers: [ 
     ReservationService,
-    AuthService
+    AuthService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
