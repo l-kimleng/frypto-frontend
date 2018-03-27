@@ -8,7 +8,8 @@ import { catchError, tap} from 'rxjs/operators';
 @Injectable()
 export class AuthService {
     //private _baseUrl: string = "http://localhost:50488";
-    private _baseUrl: string = "http://frypto.somee.com"; // for production
+    //private _baseUrl: string = "http://frypto.somee.com"; // for production
+    private _baseUrl: string = "https://frypto.somee.com"; // for production
     
     constructor(private _http: HttpClient) { }
 
