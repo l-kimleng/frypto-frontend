@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ReservationService {
     //private _url: string = "http://localhost:50488/api/reservations/";
     //private _baseUrl: string = "http://frypto.somee.com"; // for production
-    private _baseUrl: string = "https://frypto.somee.com"; // for production
-    constructor(private _http: HttpClient) { }
+    private _baseUrl: string = environment.baseUrl; // for production
+    constructor(private _http: HttpClient) {}
 
     getReservation () {      
         let token = localStorage.getItem('token');

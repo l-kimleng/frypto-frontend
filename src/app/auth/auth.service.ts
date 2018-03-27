@@ -4,12 +4,13 @@ import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import { User } from './user';
 import { catchError, tap} from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
     //private _baseUrl: string = "http://localhost:50488";
     //private _baseUrl: string = "http://frypto.somee.com"; // for production
-    private _baseUrl: string = "https://frypto.somee.com"; // for production
+    private _baseUrl: string = environment.baseUrl;// for production
     
     constructor(private _http: HttpClient) { }
 
