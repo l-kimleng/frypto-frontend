@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { environment } from '../environments/environment';
 import { MessageService } from './auth/message.service';
+import { DataService } from './shared/data.service';
 
 firebase.initializeApp(environment.firebase);
 
@@ -48,6 +49,10 @@ firebase.initializeApp(environment.firebase);
         path: "",
         component: HomeComponent,
         children: [
+          {
+            path: "hotel/:user_name",
+            component: HotelComponent
+          },
           {
             path: "hotel",
             component: HotelComponent
@@ -85,7 +90,8 @@ firebase.initializeApp(environment.firebase);
   providers: [ 
     ReservationService,
     AuthService,
-    MessageService
+    MessageService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

@@ -29,10 +29,10 @@ export class RegisterComponent implements OnInit {
       if(!error) {
         this._authServce.login(this.user).subscribe(response => {          
           localStorage.setItem('token', response[0]);
-          this._router.navigate(['/hotel']);
+          let user_name = response[3];      
+          this._router.navigate([`/hotel/${user_name}`]);
         });
       }
     });  
   }
-
 }

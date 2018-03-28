@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  userName: string;
 
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
+    this._dataService.currentMessage.subscribe(message => this.userName = message);
   }
 
 }
