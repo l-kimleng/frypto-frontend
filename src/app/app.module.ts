@@ -64,6 +64,10 @@ firebase.initializeApp(environment.firebase);
           {
             path: 'payments',
             component: PaymentsComponent
+          },
+          {
+            path: 'register',
+            component: RegisterComponent
           }
         ]
       },

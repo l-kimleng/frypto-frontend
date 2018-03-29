@@ -1,34 +1,47 @@
-<div class="card card-primary">
-  <div class="overview__heading">Frypto Reservation Service</div>
-  <div class="card-header">
-    <h2>Register</h2>
+<main class="register-view">
+    <div class="gallery">
+        <figure class="gallery__item">
+            <img src="assets/img/flight-1.jpg" alt="Photo of flight 1" class="gallery__photo">
+        </figure>
+        <figure class="gallery__item">
+            <img src="assets/img/flight-2.jpg" alt="Photo of flight 2" class="gallery__photo">
+        </figure>
+        <figure class="gallery__item">
+            <img src="assets/img/flight-3.jpg" alt="Photo of flight 3" class="gallery__photo">
+        </figure>
+    </div>
+    <div class="overview">
+        <h1 class="overview__heading">
+           Register User
+        </h1> 
+    </div>
+  <div class="register-detail">
+      <div class="form-area">
+        <form method="POST">
+            <div class="form-group">
+              <label for="frist_name">First Name</label>
+              <input id="frist_name" [(ngModel)]="user.firstName" type="text" class="form-control " name="frist_name" autofocus="">
+            </div>
+            <div class="form-group">
+              <label for="last_name" >Last Name</label>
+              <input id="last_name" [(ngModel)]="user.lastName" type="text" class="form-control" name="last_name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" [(ngModel)]="user.email" type="email" class="form-control" name="email">							
+            </div>
+              <div class="form-group">
+                <label for="password" >Password</label>
+                <input id="password" [(ngModel)]="user.password" type="password" class="form-control" name="password">
+              </div>
+              <div class="form-group">
+                <label for="password2" >Password Confirmation</label>
+                <input id="password2" [(ngModel)]="user.confirmPassword" type="password" class="form-control" name="password-confirm">
+              </div>                            
+            <div class="form-group">
+              <button type="submit" (click) = "registerUser()" class="btn btn-block">Register</button>
+            </div>
+        </form>
+      </div> 
   </div>
-  <div class="card-body">
-    <form method="POST">
-        <div class="form-group">
-          <label for="frist_name" class="col-form-label col-form-label-lg">First Name</label>
-          <input id="frist_name" [(ngModel)]="user.firstName" type="text" class="form-control form-control-lg" name="frist_name" autofocus="">
-        </div>
-        <div class="form-group">
-          <label for="last_name" class="col-form-label col-form-label-lg">Last Name</label>
-          <input id="last_name" [(ngModel)]="user.lastName" type="text" class="form-control form-control-lg" name="last_name">
-        </div>
-        <div class="form-group">
-          <label for="email" class=" col-form-label col-form-label-lg">Email</label>
-          <input id="email" [(ngModel)]="user.email" type="email" class="form-control form-control-lg" name="email">							
-        </div>
-          <div class="form-group">
-            <label for="password" class="d-block col-form-label col-form-label-lg">Password</label>
-            <input id="password" [(ngModel)]="user.password" type="password" class="form-control form-control-lg" name="password">
-          </div>
-          <div class="form-group">
-            <label for="password2" class="d-block col-form-label col-form-label-lg">Password Confirmation</label>
-            <input id="password2" [(ngModel)]="user.confirmPassword" type="password" class="form-control form-control-lg" name="password-confirm">
-          </div>
-                        
-        <div class="form-group">
-          <button type="submit" (click) = "registerUser()" class="btn btn-block">Register</button>
-        </div>
-    </form>
-  </div>
-</div>
+</main>
