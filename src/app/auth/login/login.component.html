@@ -1,23 +1,23 @@
 
-<div class="card card-primary">
-  <div class="overview__heading">Frypto Reservation Service</div>
-  <div class="card-header">
-    <h2>Login</h2>
-  </div>
-  <div class="card-body">
-    <form method="POST">          
-        <div class="form-group">
-          <label for="email" class=" col-form-label col-form-label-lg">Email</label>
-          <input id="email" [(ngModel)]="user.email" type="email" class="form-control form-control-lg" name="email">							
-        </div>
-          <div class="form-group">
-            <label for="password" class="d-block col-form-label col-form-label-lg">Password</label>
-            <input id="password" [(ngModel)]="user.password" type="password" class="form-control form-control-lg" name="password">
-          </div>          
-                        
-        <div class="form-group">
-          <button type="submit" (click) = "login()" class="btn btn-block">Login</button>
-        </div>
-    </form>
-  </div>
+<div class="book">
+    <div class="book__form">
+        <form method="POST" class="form">
+            <div class="u-margin-bottom-medium">
+                <h2 class="heading-secondary">
+                    Frypto - Reservation System
+                </h2>
+            </div>
+            <div class="form-group form__group">              
+              <input id="email" [(ngModel)]="user.email" type="email" class="form__input  form-control" name="email" placeholder="Email address" required>							
+              <label for="email"  class="form__label">Email address</label>
+            </div>
+            <div class="form-group form__group">              
+              <input id="password" [(ngModel)]="user.password" type="password" class="form__input  form-control" name="password" placeholder="Password" required>
+              <label for="password"  class="form__label" >Password</label>
+            </div>
+            <div class="form__group form-group">
+                <button type="submit" class="btn" (click) = "login()">Login</button>
+            </div>
+        </form>
+    </div>
 </div>
