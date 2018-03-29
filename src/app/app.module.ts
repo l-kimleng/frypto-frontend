@@ -50,10 +50,6 @@ firebase.initializeApp(environment.firebase);
         component: HomeComponent,
         children: [
           {
-            path: "hotel/:user_name",
-            component: HotelComponent
-          },
-          {
             path: "hotel",
             component: HotelComponent
           },

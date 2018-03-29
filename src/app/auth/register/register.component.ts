@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { User } from '../user';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { DataService } from '../../shared/data.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
   user: User;
   
-  constructor(private _authServce: AuthService, private _router: Router) { }
+  constructor(private _authServce: AuthService, private _router: Router, private _dataService: DataService) { }
 
   ngOnInit() {
     this.user = {
@@ -29,8 +30,9 @@ export class RegisterComponent implements OnInit {
       if(!error) {
         this._authServce.login(this.user).subscribe(response => {          
           localStorage.setItem('token', response[0]);
-          let user_name = response[3];      
-          this._router.navigate([`/hotel/${user_name}`]);
+          let userName = response[3];
+          this._dataService.changeMessage(userName);
+          this._router.navigate(['/hotel']);
         });
       }
     });  
