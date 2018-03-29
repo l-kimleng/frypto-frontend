@@ -27,6 +27,7 @@
                     <th scope="col">Number in Party</th>
                     <th scope="col">Ticket Type</th>
                     <th scope="col">Travel Class</th>
+                    <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,7 @@
                     <td>{{r.NumberInParty}}</td>
                     <td>{{r.TicketType.Name}}</td>
                     <td>{{r.TravelClass.Class}}</td>
+                    <td>{{r.ReservationStatus.Label}}</td>
                   </tr>                  
                 </tbody>
               </table>
