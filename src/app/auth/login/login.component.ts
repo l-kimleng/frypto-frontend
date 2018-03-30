@@ -33,13 +33,8 @@ export class LoginComponent implements OnInit {
   login() {
     this._authService.login(this.user).subscribe(response => {
       localStorage.setItem('token', response[0]);
-      let userName:string = response[3];
-      let role = '';
-      if(userName.includes('admin')) {
-        role = 'CanManageUser';
-      }
       this.message.userName = response[3];
-      this.message.roles = this.message.roles.concat(role);
+      this.message.roles = response[4].split(",");
       this._dataService.changeMessage(this.message);
       this._router.navigate(['/hotel']);
     }, error => {

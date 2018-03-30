@@ -36,14 +36,9 @@ export class RegisterComponent implements OnInit {
     this._authServce.registerUser(this.user).subscribe(error => {
       if(!error) {
         this._authServce.login(this.user).subscribe(response => {          
-          localStorage.setItem('token', response[0]);
-          let userName:string = response[3];
-          let role = '';
-          if(userName.includes('admin')) {
-            role = 'CanManageUser';
-          }
+          localStorage.setItem('token', response[0]);          
           this.message.userName = response[3];                   
-          this.message.roles = this.message.roles.concat(role);          
+          this.message.roles = response[4].split(",");        
           this._dataService.changeMessage(this.message);
           this._router.navigate(['/hotel']);
         });

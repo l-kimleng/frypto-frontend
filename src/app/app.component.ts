@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MessageService } from './auth/message.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +10,9 @@ import { MessageService } from './auth/message.service';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private _router: Router, private _messageService: MessageService) { }
+  constructor(private _router: Router) { }
   ngOnInit(): void {
-    this._router.navigate(['auth/login']);
-    // For testing message service
-    this._messageService.getPermission();
-    this._messageService.receiveMessage();
+    this._router.navigate(['auth/login']);    
   }
  
 }
