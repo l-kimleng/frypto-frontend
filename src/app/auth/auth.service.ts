@@ -15,9 +15,10 @@ export class AuthService {
     constructor(private _http: HttpClient) { }
 
     registerUser (user: User) {
+        let token = localStorage.getItem('token');
         return this._http
-            .post(`${this._baseUrl}/api/Account/Register`, user, {                                
-                headers: new HttpHeaders().set('Content-Type', "application/json")
+            .post(`${this._baseUrl}/api/Account/Register`, user, {                
+                headers: new HttpHeaders().set('Authorization', "Bearer " + token)
             });
     }
 
