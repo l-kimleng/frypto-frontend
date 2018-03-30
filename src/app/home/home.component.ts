@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
-    this._dataService.currentMessage.subscribe(message => this.userName = message);
+    this._dataService.currentMessage.subscribe(message => this.userName = message.userName);
   }
 
 }

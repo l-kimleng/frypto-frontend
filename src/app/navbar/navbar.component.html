@@ -31,7 +31,7 @@
             <span>Payments</span>
         </a>
     </li>
-    <li class="side-nav__item" routerLinkActive="side-nav__item--active">
+    <li class="side-nav__item" routerLinkActive="side-nav__item--active" *ngIf = "isInRoles('CanManageUser')">
         <a routerLink="/register" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#user"></use>
