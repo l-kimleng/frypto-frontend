@@ -13,7 +13,7 @@
   
     <div class="overview">
         <h1 class="overview__heading">
-            Airline Reservation
+            Flight Reservation
         </h1> 
     </div>
     <div class="reservation-detail">
@@ -38,7 +38,11 @@
                     <td>{{r.NumberInParty}}</td>
                     <td>{{r.TicketType.Name}}</td>
                     <td>{{r.TravelClass.Class}}</td>
-                    <td>{{r.ReservationStatus.Label}}</td>
+                    <td><span class="badge" [ngClass]="{
+                        'badge-success':r.ReservationStatus.Label === 'Paid',
+                        'badge-danger':r.ReservationStatus.Label === 'Cancel',
+                        'badge-info':r.ReservationStatus.Label === 'Pending'
+                      }">{{r.ReservationStatus.Label}}</span></td>
                   </tr>                  
                 </tbody>
               </table>
