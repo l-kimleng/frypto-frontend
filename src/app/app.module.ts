@@ -46,7 +46,12 @@ firebase.initializeApp(environment.firebase);
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
-        path: "",
+        path:'',
+        redirectTo:'auth/login',
+        pathMatch: 'full'
+      },
+      {
+        path: "app",
         component: HomeComponent,
         children: [
           {
@@ -85,7 +90,7 @@ firebase.initializeApp(environment.firebase);
           }
         ]
       }      
-    ])
+    ], { useHash: true })
   ],
   providers: [ 
     ReservationService,

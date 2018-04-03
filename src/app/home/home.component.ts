@@ -14,7 +14,10 @@ export class HomeComponent implements OnInit {
   constructor(private _dataService: DataService , private _messageService: MessageService) { }
 
   ngOnInit() {
-    this._dataService.currentMessage.subscribe(message => this.userName = message.userName);
+    this._dataService.currentMessage.subscribe(message => {
+      if(message)
+        this.userName = message.userName;
+    });
     
     if(isDevMode()) {      
        // For testing message service

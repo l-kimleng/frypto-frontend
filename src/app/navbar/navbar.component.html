@@ -1,6 +1,6 @@
 <ul class="side-nav">
     <li class="side-nav__item" routerLinkActive="side-nav__item--active">
-        <a routerLink="/hotel" class="side-nav__link">
+        <a routerLink="/app/hotel" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#hotel"></use>
             </svg>
@@ -8,7 +8,7 @@
         </a>
     </li>
     <li class="side-nav__item" routerLinkActive="side-nav__item--active">
-        <a routerLink="/passenger" class="side-nav__link">
+        <a routerLink="/app/passenger" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#traveler"></use>
             </svg>
@@ -16,7 +16,7 @@
         </a>
     </li>
     <li class="side-nav__item" routerLinkActive="side-nav__item--active">
-        <a routerLink="/reservation" class="side-nav__link">
+        <a routerLink="/app/reservation" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#calendar"></use>
             </svg>
@@ -24,7 +24,7 @@
         </a>
     </li>
     <li class="side-nav__item" routerLinkActive="side-nav__item--active">
-        <a routerLink="/payments" class="side-nav__link">
+        <a routerLink="/app/payments" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#wallet"></use>
             </svg>
@@ -32,7 +32,7 @@
         </a>
     </li>
     <li class="side-nav__item" routerLinkActive="side-nav__item--active" *ngIf = "isInRoles('CanManageUser')">
-        <a routerLink="/register" class="side-nav__link">
+        <a routerLink="/app/register" class="side-nav__link">
             <svg class="side-nav__icon">
                 <use xlink:href="assets/img/sidebar-sprite.svg#user"></use>
             </svg>

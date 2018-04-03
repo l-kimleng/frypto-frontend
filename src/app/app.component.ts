@@ -1,18 +1,17 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  encapsulation: ViewEncapsulation.None,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit {
   title = 'app';
 
   constructor(private _router: Router) { }
   ngOnInit(): void {
-    this._router.navigate(['auth/login']);    
+   //let token = localStorage.getItem('token');
+   //if (token === null)
+      //this._router.navigate(['auth/login']);    
   }
- 
 }

@@ -12,7 +12,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this._dataService.currentMessage.subscribe(message => {
-      this._roles =  message.roles;      
+      if(message)
+        this._roles =  message.roles;      
     });
   }
 

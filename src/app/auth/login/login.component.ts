@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.message.userName = response[3];
       this.message.roles = response[4].split(",");
       this._dataService.changeMessage(this.message);
-      this._router.navigate(['/hotel']);
+      this._router.navigate(['app/hotel']);
     }, err => {
       alert(`Login Fail: ${err.error.error_description}`);
     });
