@@ -22,6 +22,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { environment } from '../environments/environment';
 import { MessageService } from './auth/message.service';
 import { DataService } from './shared/data.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 firebase.initializeApp(environment.firebase);
 
@@ -60,19 +61,23 @@ firebase.initializeApp(environment.firebase);
           },
           {
             path: 'passenger',
-            component: PassengerComponent
+            component: PassengerComponent,
+            canActivate: [ AuthGuardService ]
           },
           {
             path: 'reservation',
-            component: ReservationComponent
+            component: ReservationComponent,
+            canActivate: [ AuthGuardService ]
           },
           {
             path: 'payments',
-            component: PaymentsComponent
+            component: PaymentsComponent,
+            canActivate: [ AuthGuardService ]
           },
           {
             path: 'register',
-            component: RegisterComponent
+            component: RegisterComponent,
+            canActivate: [ AuthGuardService ]
           }
         ]
       },
@@ -82,7 +87,8 @@ firebase.initializeApp(environment.firebase);
         children: [
           {
             path: "register",
-            component: RegisterComponent
+            component: RegisterComponent,
+            canActivate: [ AuthGuardService ]
           },
           {
             path: "login",
@@ -95,6 +101,7 @@ firebase.initializeApp(environment.firebase);
   providers: [ 
     ReservationService,
     AuthService,
+    AuthGuardService,
     MessageService,
     DataService
   ],
