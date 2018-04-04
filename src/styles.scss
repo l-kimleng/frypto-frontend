@@ -25,6 +25,27 @@ $bp-medium: 56.25em;   // 900px
 $bp-small: 37.5em;     // 600px
 $bp-smallest: 31.25em; // 500px
 
+// COLORS
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
 * {
     margin: 0;
     padding: 0;
@@ -643,7 +664,9 @@ body {
     color: #fff;
     position: relative;
     overflow: hidden;
-    cursor: pointer;    
+    cursor: pointer;
+    min-height: 5rem;    
+    min-width: 20rem;
     
     & > * {
         display: inline-block;
@@ -681,6 +704,57 @@ body {
     }
 }
 
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rbga($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        transition: all .3s;
+
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }    
+}
+
 
 .u-center-text { text-align: center !important; }
 
@@ -692,6 +766,7 @@ body {
 .u-margin-bottom-big { 
     margin-bottom: 8rem !important;
 }
-
+.u-margin-top-small { margin-top: 1.5rem !important; }
+.u-margin-top-medium { margin-top: 2rem !important; }
 .u-margin-top-big { margin-top: 8rem !important; }
 .u-margin-top-huge { margin-top: 10rem !important; }

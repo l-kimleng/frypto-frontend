@@ -16,29 +16,29 @@
         </h1> 
     </div>
   <div class="register-detail">
-      <div class="form-area">
+      <div class="form-area form">
         <form method="POST">
-            <div class="form-group">
+            <div class="form-group form__group">
               <label for="frist_name">First Name</label>
-              <input id="frist_name" [(ngModel)]="user.firstName" type="text" class="form-control " name="frist_name" autofocus="">
+              <input id="frist_name" [(ngModel)]="user.firstName" type="text" class="register-detail__input form-control " name="frist_name" autofocus="">
             </div>
-            <div class="form-group">
+            <div class="form-group form__group">
               <label for="last_name" >Last Name</label>
-              <input id="last_name" [(ngModel)]="user.lastName" type="text" class="form-control" name="last_name">
+              <input id="last_name" [(ngModel)]="user.lastName" type="text" class="register-detail__input form-control" name="last_name">
             </div>
-            <div class="form-group">
+            <div class="form-group form__group">
               <label for="email">Email</label>
-              <input id="email" [(ngModel)]="user.email" type="email" class="form-control" name="email">							
+              <input id="email" [(ngModel)]="user.email" type="email" class="register-detail__input form-control" name="email">							
             </div>
-              <div class="form-group">
+              <div class="form-group form__group">
                 <label for="password" >Password</label>
-                <input id="password" [(ngModel)]="user.password" type="password" class="form-control" name="password">
+                <input id="password" [(ngModel)]="user.password" type="password" class="register-detail__input form-control" name="password">
               </div>
-              <div class="form-group">
+              <div class="form-group form__group">
                 <label for="password2" >Password Confirmation</label>
-                <input id="password2" [(ngModel)]="user.confirmPassword" type="password" class="form-control" name="password-confirm">
+                <input id="password2" [(ngModel)]="user.confirmPassword" type="password" class="register-detail__input form-control" name="password-confirm">
               </div>                            
-            <div class="form-group">
+            <div class="form-group form__group u-margin-top-medium">
               <button type="submit" (click) = "registerUser()" class="btn btn-block">Register</button>
             </div>
         </form>
