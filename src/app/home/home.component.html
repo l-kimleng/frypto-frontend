@@ -25,9 +25,13 @@
                     </svg>
                     <span class="user-nav__notification">13</span>
                 </div>
-                <div class="user-nav__user">
+                <div class="user-nav__user" ngbDropdown>
                     <img src="assets/img/user.png" alt="User photo" class="user-nav__user-photo">
-                    <span class="user-nav__user-name">{{userName}}</span>
+                    <span class="user-nav__user-name" id="ddUserName" ngbDropdownToggle>{{userName}}</span>
+                    <div ngbDropdownMenu aria-labelledby="ddUserName">
+                        <button class="dropdown-item"> Profile </button>
+                        <button class="dropdown-item" (click)="logout()"> Logout </button>
+                    </div>
                 </div>
         </nav>
     </header>

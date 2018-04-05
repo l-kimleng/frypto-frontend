@@ -30,5 +30,13 @@ export class AuthService {
             })
             .map(res => _.values(res));
     }
+
+    logout () {
+        let token = localStorage.getItem('token');
+        return this._http
+            .post(`${this._baseUrl}/api/Account/Logout`, {                
+                headers: new HttpHeaders().set('Authorization', "Bearer " + token)
+            });
+    }
 }
     
