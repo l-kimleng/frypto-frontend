@@ -36,4 +36,8 @@ export class ReservationComponent implements OnInit {
       this.totalItem = data.TotalItem;
     }); 
   }
+
+  showHidePagination() {
+    return this.totalItem / parseInt(this.queryObject.pageSize) >= 2;
+  }
 }

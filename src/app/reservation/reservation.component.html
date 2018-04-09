@@ -46,7 +46,7 @@
                   </tr>                  
                 </tbody>
               </table>
-              <div class="pagination" *ngIf="totalItem / queryObject.pageSize >= 2">
+              <div class="pagination" *ngIf="showHidePagination()">
                 <ngb-pagination [collectionSize]="totalItem" [pageSize] = "queryObject.pageSize" [maxSize]="5" [(page)]="queryObject.page" size = "lg" (pageChange)="pageChange($event)"></ngb-pagination>
               </div>
               
